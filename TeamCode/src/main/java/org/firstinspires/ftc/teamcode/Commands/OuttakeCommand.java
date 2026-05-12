@@ -2,15 +2,21 @@ package org.firstinspires.ftc.teamcode.Commands;
 
 import com.arcrobotics.ftclib.command.CommandBase;
 
+import org.firstinspires.ftc.teamcode.Subsystems.IndexerSubsystem;
 import org.firstinspires.ftc.teamcode.Subsystems.IntakeSubsystem;
 
 public class OuttakeCommand extends CommandBase {
 
+IndexerSubsystem indexerSubsystem;
+
     IntakeSubsystem intakeSubsystem;
-    public OuttakeCommand(IntakeSubsystem intakeSubsystem) {
+    public OuttakeCommand(IntakeSubsystem intakeSubsystem, IndexerSubsystem indexerSubsystem) {
     this.intakeSubsystem = intakeSubsystem;
+    this.indexerSubsystem = indexerSubsystem;
 
         addRequirements(intakeSubsystem);
+        addRequirements(indexerSubsystem);
+
     }
 
     @Override
@@ -20,6 +26,9 @@ public class OuttakeCommand extends CommandBase {
     @Override
     public void execute() {
         intakeSubsystem.runIntake(-0.50);
+        //indexer
+
+        indexerSubsystem.runIndexer(-0.50);
     }
 
     @Override

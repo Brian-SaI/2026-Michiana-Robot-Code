@@ -3,16 +3,22 @@ package org.firstinspires.ftc.teamcode.Commands;
 import com.arcrobotics.ftclib.command.CommandBase;
 import com.qualcomm.robotcore.util.ElapsedTime;
 
+import org.firstinspires.ftc.teamcode.Subsystems.IndexerSubsystem;
 import org.firstinspires.ftc.teamcode.Subsystems.IntakeSubsystem;
 import org.firstinspires.ftc.teamcode.Subsystems.SubsystemTest;
 
 public class intakeCommand extends CommandBase {
 
+IndexerSubsystem indexerSubsystem;
+
     IntakeSubsystem intakeSubsystem;
-    public intakeCommand(IntakeSubsystem intakeSubsystem) {
+    public intakeCommand(IntakeSubsystem intakeSubsystem, IndexerSubsystem indexerSubsystem) {
     this.intakeSubsystem = intakeSubsystem;
+    this.indexerSubsystem = indexerSubsystem;
 
         addRequirements(intakeSubsystem);
+        addRequirements(indexerSubsystem);
+
     }
 
     @Override
@@ -22,6 +28,10 @@ public class intakeCommand extends CommandBase {
     @Override
     public void execute() {
         intakeSubsystem.runIntake(0.50);
+        //indexer
+
+        indexerSubsystem.runIndexer(0.50);
+
     }
 
     @Override

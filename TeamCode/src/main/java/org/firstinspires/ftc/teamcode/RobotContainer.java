@@ -11,6 +11,7 @@ import org.firstinspires.ftc.teamcode.Commands.SwerveDrive;
 import org.firstinspires.ftc.teamcode.Commands.intakeCommand;
 import org.firstinspires.ftc.teamcode.Subsystems.CommandMecanumDriveTrain;
 import org.firstinspires.ftc.teamcode.Subsystems.CommandSwerveDriveTrain;
+import org.firstinspires.ftc.teamcode.Subsystems.IndexerSubsystem;
 import org.firstinspires.ftc.teamcode.Subsystems.IntakeSubsystem;
 import org.firstinspires.ftc.teamcode.Subsystems.SubsystemTest;
 
@@ -19,9 +20,10 @@ public class RobotContainer extends CommandOpMode {
 
     //subsystems
     IntakeSubsystem intakeSubsystem;
+    IndexerSubsystem indexerSubsystem;
 
     // commands
-    intakeCommand intakeCommand = new intakeCommand(intakeSubsystem);
+    intakeCommand intakeCommand = new intakeCommand(intakeSubsystem, indexerSubsystem);
     OuttakeCommand outtakeCommand = new OuttakeCommand(intakeSubsystem);
     private SubsystemTest subsystemTest;
     // DISABLE FOR MICHIANA!!! - Brian
