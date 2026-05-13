@@ -24,7 +24,7 @@ public class RobotContainer extends CommandOpMode {
 
     // commands
     intakeCommand intakeCommand = new intakeCommand(intakeSubsystem, indexerSubsystem);
-    OuttakeCommand outtakeCommand = new OuttakeCommand(intakeSubsystem);
+    OuttakeCommand outtakeCommand = new OuttakeCommand(intakeSubsystem, indexerSubsystem);
     private SubsystemTest subsystemTest;
     // DISABLE FOR MICHIANA!!! - Brian
     // private final CommandSwerveDriveTrain swerveDriveTrain = new CommandSwerveDriveTrain();
