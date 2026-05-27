@@ -1,31 +1,29 @@
 package org.firstinspires.ftc.teamcode.Subsystems;
 
-import static org.firstinspires.ftc.robotcore.external.BlocksOpModeCompanion.hardwareMap;
-
 import com.arcrobotics.ftclib.command.SubsystemBase;
-import com.qualcomm.robotcore.hardware.CRServo;
 import com.qualcomm.robotcore.hardware.DcMotorEx;
+import com.qualcomm.robotcore.hardware.HardwareMap;
 
 public class ShooterSubsystem extends SubsystemBase {
 
-    DcMotorEx LShooter;
-    DcMotorEx RShooter;
+    private final DcMotorEx lShooter;
+    private final DcMotorEx rShooter;
 
+    public ShooterSubsystem(final HardwareMap hMap) {
+        lShooter = hMap.get(DcMotorEx.class, "LShooter");
+        rShooter = hMap.get(DcMotorEx.class, "RShooter");
 
-
-    public ShooterSubsystem() {
-
-        LShooter = hardwareMap.get(DcMotorEx.class, "LShooter");
-        RShooter  = hardwareMap.get(DcMotorEx.class, "RShooter");
+        // Optional but recommended: Reverse one motor if they face opposite directions
+        // rShooter.setDirection(DcMotorEx.Direction.REVERSE);
     }
 
     @Override
     public void periodic() {
+        // Will run automatically every loop cycle if needed later
     }
 
     public void runShooter(double velocity) {
-        LShooter.setVelocity(velocity);
-        RShooter.setVelocity(velocity);
-
+        lShooter.setVelocity(velocity);
+        rShooter.setVelocity(velocity);
     }
 }

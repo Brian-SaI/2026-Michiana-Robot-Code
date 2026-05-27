@@ -8,7 +8,7 @@ import org.firstinspires.ftc.teamcode.Subsystems.IntakeSubsystem;
 
 public class intakeCommand extends CommandBase {
 
-IndexerSubsystem indexerSubsystem;
+    IndexerSubsystem indexerSubsystem;
 
     IntakeSubsystem intakeSubsystem;
     public intakeCommand(IntakeSubsystem intakeSubsystem, IndexerSubsystem indexerSubsystem) {

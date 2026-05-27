@@ -15,8 +15,8 @@ public class IntakeSubsystem extends SubsystemBase {
 
     DcMotorEx intake;
 
-    public IntakeSubsystem() {
-        intake =  hardwareMap.get(DcMotorEx.class, "Intake");
+    public IntakeSubsystem(final HardwareMap hMap) {
+        intake =  hMap.get(DcMotorEx.class, "Intake");
     }
 
     @Override
@@ -24,6 +24,6 @@ public class IntakeSubsystem extends SubsystemBase {
     }
 
     public void runIntake(double power) {
-        intake.setPower(power);
+        //intake.setPower(power);
     }
 }
